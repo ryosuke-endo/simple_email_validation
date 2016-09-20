@@ -5,6 +5,7 @@ describe SimpleEmailValidation do
     emails = %w(valid@example.com
                 Valid@example.com
                 v@example.com
+                valid.@example.com
                 valid_@example.com
                 valid-@example.com)
 
@@ -17,7 +18,12 @@ describe SimpleEmailValidation do
 
   describe "invalid" do
     emails = %w(日本語@example.com
-                invalid..123@example.com)
+                i@i
+                @invalid.com
+                invalid@
+                <>@invalid.com
+                valid123..@example.com
+                "invalid..123"@example.com)
 
     emails.each do |email|
       it "#{email} is invalid" do

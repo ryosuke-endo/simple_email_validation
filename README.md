@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
 end
 ```
 
+it conforms to RFC5322
+
 ## Contributing
 
 1. Fork it
