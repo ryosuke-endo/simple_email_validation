@@ -3,13 +3,13 @@ class EmailValidator < ActiveModel::EachValidator
 
   class << self
     def valid?(email)
-      email.match(REG_EXP)
+      !!(email.match(REG_EXP))
     end
   end
 
   def validate_each(record, attribute, value)
     unless self.class.valid?(value)
-      record.errors.add(attribute, options[:massage])
+      record.errors.add(attribute, options[:message])
     end
   end
 end
